@@ -2,6 +2,9 @@
   <Navbar :pages="publishedPages" :activePage="activePage" :setActivePage="(index) => activePage = index" />
   <PageViewer v-if="pages.length > 0" :page="publishedPages[activePage]" />
   <!-- <PageCreate :pageCreated="pageCreated"/> -->
+  
+  <router-view/>
+
 </template>
 
 <script>

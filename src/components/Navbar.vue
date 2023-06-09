@@ -30,6 +30,11 @@
             />
 
           </li>
+          <li class="nav-item">
+            <router-link to="/create" class="nav-link" 
+            :class="{ emphasized: $route.path === '/create' }"
+            >Create page</router-link>
+          </li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -82,3 +87,9 @@ export default {
 
 };
 </script>
+<style scoped>
+.emphasized {
+    font-weight: bold;
+    text-decoration: underline !important;
+}
+</style>

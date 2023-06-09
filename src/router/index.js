@@ -1,19 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import AppView from '../App.vue'
 
 const routes = [
   {
-    path: '/:index?',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/create',
-    name: 'create',
+    path: '/pages',
+    name: 'pages',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../components/PageCreate.vue')
+    component: () => import('../views/PagesList.vue'),
+    props: true, //it will pass the props to the component
+    children: [
+      {
+        path: 'create',
+        name: 'create',
+        component: () => import('../components/PageCreate.vue'),
+        props: true
+      },
+    ]
   }
   
 ]
